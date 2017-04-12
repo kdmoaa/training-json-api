@@ -10,11 +10,11 @@
 
 		<table border=1>
 			<tr><th>column</th><th>value</th></tr>
-			<tr><td>id</td><td>${id}</td></tr>
-			<tr><td>title</td><td>${title}</td></tr>
-			<tr><td>description</td><td>${description}</td></tr>
-			<tr><td>staff</td><td>${staff}</td></tr>
-			<tr><td>limit</td><td>${limit}</td></tr>
+			<tr><td>id</td><td>${model.id}</td></tr>
+			<tr><td>title</td><td>${model.title}</td></tr>
+			<tr><td>description</td><td>${model.description}</td></tr>
+			<tr><td>staff</td><td>${model.staff}</td></tr>
+			<tr><td>limit</td><td>${model.limit}</td></tr>
 		</table>
 	</body>
 </html>

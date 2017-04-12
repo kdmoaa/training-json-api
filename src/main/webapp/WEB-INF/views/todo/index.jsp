@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h2>This is Todo list</h2>
-		<form action="/spring-myBatis/todo/loadTodo" method="get">
+		<form action="/todo/loadTodo" method="get">
 			<input type="text" name="id" placeholder="idを入力してください">
 			<input type="submit" value="送信">
 		</form>

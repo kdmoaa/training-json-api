@@ -6,6 +6,5 @@
 	</head>
 	<body>
 		Hello Spring!
-		<p> DB's data is ${data}. </p>
 	</body>
 </html>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.dao.TodoDao;
 import com.dto.TodoDto;
 import com.service.TodoService;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class TodoController {
@@ -21,30 +22,23 @@ public class TodoController {
 	private TodoService todoService;
 
 	@RequestMapping(value = "/todo", method = RequestMethod.GET)
-	public String index() {
-		return "todo/index";
+	public ModelAndView index() {
+		return new ModelAndView("todo/index");
 	}
 
 	@RequestMapping(value = "/todo/{id}", method = RequestMethod.GET)
-	public String findTodoById(Model model, @PathVariable int id) {
+	public ModelAndView findTodoById(@PathVariable int id) {
 
 		String title = todoDao.findTodo(id);
 
-		model.addAttribute("title", title);
-
-		return "todo/showTitle";
+		return new ModelAndView("todo/showTitle", "title", title);
 	}
 
 	@RequestMapping(value = "/todo/loadTodo", method = RequestMethod.GET)
-	public String loadTodo(Model model, @RequestParam(value = "id") int id) {
+	public ModelAndView loadTodo(@RequestParam(value = "id") int id) {
 		TodoDto dto = todoService.load(id);
-		model.addAttribute("id", dto.getId());
-		model.addAttribute("title", dto.getTitle());
-		model.addAttribute("description", dto.getDescription());
-		model.addAttribute("staff", dto.getStaff());
-		model.addAttribute("limit", dto.getLimit());
 
-		return "todo/showTitle";
+		return new ModelAndView("todo/showTitle", "model", dto);
 
 	}
 
