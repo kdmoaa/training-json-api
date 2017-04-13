@@ -6,5 +6,9 @@
 	</head>
 	<body>
 		Hello Spring!
+
+	<form method="get" action="/workshop">
+		<input type="submit" value="ワークショップ一覧へ">
+	</form>
 	</body>
 </html>
